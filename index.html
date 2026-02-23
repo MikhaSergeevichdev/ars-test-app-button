@@ -15,7 +15,7 @@
 
  function scanLike() {
 
-    const intentUrl = `intent://pay?data=${encodeURIComponent(payload)}`
+    const intentUrl = "mercadopago://money-out/transfers/unified/input"
     window.location.href = intentUrl
   }
 </script>
