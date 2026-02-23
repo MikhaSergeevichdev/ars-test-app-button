@@ -5,17 +5,24 @@
 </head>
 <body>
 
-<button onclick="openApp()" class="pay-btn">
+<button onclick="scanLike()" class="pay-btn">
   Pay
 </button>
 
 <script>
   const payload =
-    '00020101021127730018ar.com.personalpay0147jvqiJkoAv5ATMv4hN7hWJY-05204739953030325802AR5916Ppay PAGOS FACIL6005Chaco80140010APP_MOBILE63047F20'
+    "00020101021127730018ar.com.personalpay0147jvqiJkoAv5ATMv4hN7hWJY-05204739953030325802AR5916Ppay PAGOS FACIL6005Chaco80140010APP_MOBILE63047F20"
 
-  function openApp() {
-    const intentUrl = `intent://pay?data=${encodeURIComponent(payload)}`
-    window.location.href = intentUrl
+  function scanLike() {
+    const intent =
+      "intent://" +
+      encodeURIComponent(payload) +
+      "#Intent;" +
+      "action=android.intent.action.VIEW;" +
+      "type=text/plain;" +
+      "end"
+
+    window.location.href = intent
   }
 </script>
 
