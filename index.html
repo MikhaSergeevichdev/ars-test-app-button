@@ -14,12 +14,7 @@
     '00020101021127730018ar.com.personalpay0147jvqiJkoAv5ATMv4hN7hWJY-05204739953030325802AR5916Ppay PAGOS FACIL6005Chaco80140010APP_MOBILE63047F20'
 
   function openApp() {
-    const intentUrl =
-      `intent://scan#Intent;` +
-      `S.payload=${encodeURIComponent(payload)};` +
-      `action=android.intent.action.VIEW;` +
-      `end`
-
+    const intentUrl = encodeURIComponent(payload);
     window.location.href = intentUrl
   }
 </script>
