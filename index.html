@@ -10,13 +10,14 @@
 </button>
 
 <script>
-  const payload =
-    "00020101021127730018ar.com.personalpay0147jvqiJkoAv5ATMv4hN7hWJY-05204739953030325802AR5916Ppay PAGOS FACIL6005Chaco80140010APP_MOBILE63047F20"
+  const cbu = "0000076500000048904245"
 
  function scanLike() {
-
-    const intentUrl = "mercadopago://money-out/transfers/unified/input"
-    window.location.href = intentUrl
+    navigator.clipboard.writeText(cbu).then(() => {
+      setTimeout(() => {
+        window.location.href = "mercadopago://money-out/transfers/unified/input"
+      }, 150)
+    })
   }
 </script>
 
