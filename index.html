@@ -15,10 +15,10 @@
 
   function openApp() {
     const intentUrl =
-      `intent://#Intent;` +
-      `package=ar.com.personalpay;` +
+      `intent://scan#Intent;` +
       `S.payload=${encodeURIComponent(payload)};` +
-      `scheme=personalpay;end`
+      `action=android.intent.action.VIEW;` +
+      `end`
 
     window.location.href = intentUrl
   }
