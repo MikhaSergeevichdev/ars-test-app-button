@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <button onclick="openApp()">Open via Intent</button>
+
+    <br /><br />
+
+    <a id="payloadLink">
+      <button>Open via href</button>
+    </a>
+
+    <script>
+      const payload =
+        '00020101021127730018ar.com.personalpay0147jvqiJkoAv5ATMv4hN7hWJY...'
+
+      function openApp() {
+        const intentUrl =
+          `intent://pay?data=${encodeURIComponent(payload)}#Intent;` +
+          `package=ar.com.personalpay;` +
+          `scheme=personalpay;end`
+
+        window.location.href = intentUrl
+      }
+
+      document
+        .getElementById('payloadLink')
+        .setAttribute('href', payload)
+    </script>
+  </body>
+</html>
