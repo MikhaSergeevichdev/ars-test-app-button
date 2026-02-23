@@ -1,30 +1,21 @@
 <!DOCTYPE html>
 <html>
   <body>
-    <button onclick="openApp()">Open via Intent</button>
+<button onclick="openApp()">Pay</button>
 
-    <br /><br />
+<script>
+  const payload =
+    '00020101021127730018ar.com.personalpay0147jvqiJkoAv5ATMv4hN7hWJY-05204739953030325802AR5916Ppay PAGOS FACIL6005Chaco80140010APP_MOBILE63047F20'
 
-    <a id="payloadLink">
-      <button>Open via href</button>
-    </a>
+  function openApp() {
+    const intentUrl =
+      `intent://scan#Intent;` +
+      `package=ar.com.personalpay;` +
+      `S.payload=${encodeURIComponent(payload)};` +
+      `end`
 
-    <script>
-      const payload =
-        '00020101021127730018ar.com.personalpay01474fbb6T3TEJ4RDQvYKFhMXh-rUmmCfR4oHnKSmYdZrpezF-05204739953030325802AR5916Ppay PAGOS FACIL6019Santiago del Estero80140010APP_MOBILE6304D242'
-
-      function openApp() {
-        const intentUrl =
-          `intent://pay?data=${encodeURIComponent(payload)}#Intent;` +
-          `package=ar.com.personalpay;` +
-          `scheme=personalpay;end`
-
-        window.location.href = intentUrl
-      }
-
-      document
-        .getElementById('payloadLink')
-        .setAttribute('href', payload)
-    </script>
+    window.location.href = intentUrl
+  }
+</script>
   </body>
 </html>
