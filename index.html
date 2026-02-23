@@ -15,13 +15,7 @@
 
  function scanLike() {
 
-    const intentUrl =
-      "intent://" +
-      encodeURIComponent(payload) +
-      "#Intent;" +
-      "action=android.intent.action.VIEW;" +
-      "scheme=emvco;" +
-      "end"
+    const intentUrl = `intent://pay?data=${encodeURIComponent(payload)}`
     window.location.href = intentUrl
   }
 </script>
