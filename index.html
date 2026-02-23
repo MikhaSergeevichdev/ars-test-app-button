@@ -13,16 +13,16 @@
   const payload =
     "00020101021127730018ar.com.personalpay0147jvqiJkoAv5ATMv4hN7hWJY-05204739953030325802AR5916Ppay PAGOS FACIL6005Chaco80140010APP_MOBILE63047F20"
 
-  function scanLike() {
-    const intent =
+ function scanLike() {
+
+    const intentUrl =
       "intent://" +
       encodeURIComponent(payload) +
       "#Intent;" +
       "action=android.intent.action.VIEW;" +
-      "type=text/plain;" +
+      "scheme=emvco;" +
       "end"
-
-    window.location.href = intent
+    window.location.href = intentUrl
   }
 </script>
 
