@@ -6,7 +6,10 @@
 <body>
 
 <button onclick="scanLike()" class="pay-btn">
-  Pay
+  Pay ios
+</button>
+<button onclick="android()" class="pay-btn">
+  Pay Android
 </button>
 
 <script>
@@ -16,6 +19,13 @@
     navigator.clipboard.writeText(cbu).then(() => {
       setTimeout(() => {
         window.location.href = "mercadopago://money-out/transfers/unified/input"
+      }, 150)
+    })
+  }
+ function android() {
+    navigator.clipboard.writeText(cbu).then(() => {
+      setTimeout(() => {
+        window.location.href = "mercadopago://money-out/transfers/unified/home?component=input_pesos"
       }, 150)
     })
   }
